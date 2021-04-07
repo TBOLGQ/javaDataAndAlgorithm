@@ -1,4 +1,4 @@
-package com.jiguang.array;
+package com.jiguang.linearStruture.array;
 
 import java.util.Arrays;
 

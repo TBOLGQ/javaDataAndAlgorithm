@@ -1,4 +1,4 @@
-package com.jiguang.array;
+package com.jiguang.linearStruture.array;
 
 public class ArrayObject {
     private int[] elements;

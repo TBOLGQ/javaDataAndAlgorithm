@@ -1,4 +1,4 @@
-package com.jiguang.query;
+package com.jiguang.linearStruture.query;
 
 public class BinarySearch {
     public static void main(String[] args) {
