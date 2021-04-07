@@ -9,6 +9,9 @@ public class BinarySearch {
         int mid = (begin+end)/2;
         int index = -1;
         while (true){
+            if (begin>=end){
+                break;
+            }
             if (arr0[mid] == target){
                 index = mid;
                 break;
@@ -16,7 +19,7 @@ public class BinarySearch {
                 mid = (begin+mid)/2;
                 end = mid-1;
             }else {
-                begin = mid;
+                begin = mid+1;
                 mid = (mid+end)/2;
             }
         }
