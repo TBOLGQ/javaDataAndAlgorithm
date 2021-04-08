@@ -1,5 +1,8 @@
 package com.jiguang.linearStruture.linkedList;
 
+/**
+ * 单链表
+ */
 public class Node {
     public int data;
     Node next;

@@ -1,5 +1,8 @@
 package com.jiguang.linearStruture.linkedList;
 
+/**
+ * 双向循环链表
+ */
 public class DoubleNode {
     DoubleNode pre = this;
     DoubleNode next = this;

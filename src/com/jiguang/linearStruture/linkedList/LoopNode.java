@@ -1,5 +1,8 @@
 package com.jiguang.linearStruture.linkedList;
 
+/**
+ * 循环链表
+ */
 public class LoopNode {
     public int data;
     LoopNode next=this;
