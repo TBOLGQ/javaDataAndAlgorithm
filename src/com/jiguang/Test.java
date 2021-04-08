@@ -1,18 +1,17 @@
 package com.jiguang;
 
-import com.jiguang.linearStruture.linkedList.Node;
-import com.jiguang.linearStruture.queue.MyQueue;
-import com.jiguang.linearStruture.stack.MyStack;
+import com.jiguang.linearStruture.linkedList.LoopNode;
 
 public class Test {
     public static void main(String[] args) {
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        node1.append(node2);
-        node1.append(node3);
-        node2.after(new Node(4));
-        node1.show();
-        System.out.println(node1.next().getData());
+        LoopNode n1 = new LoopNode(1);
+        LoopNode n2 = new LoopNode(2);
+        LoopNode n3 = new LoopNode(3);
+        LoopNode n4 = new LoopNode(4);
+        n1.after(n2);
+        n2.after(n3);
+        n3.after(n4);
+        System.out.println(n1.next().next().getData());
+        System.out.println(n4.next().getData());
     }
 }
