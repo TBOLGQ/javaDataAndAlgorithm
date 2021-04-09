@@ -1,17 +1,23 @@
 package com.jiguang;
 
-import com.jiguang.linearStruture.linkedList.LoopNode;
+import com.jiguang.treeStructure.binaryTree.BinaryTree;
+import com.jiguang.treeStructure.binaryTree.TreeNode;
 
 public class Test {
     public static void main(String[] args) {
-        LoopNode n1 = new LoopNode(1);
-        LoopNode n2 = new LoopNode(2);
-        LoopNode n3 = new LoopNode(3);
-        LoopNode n4 = new LoopNode(4);
-        n1.after(n2);
-        n2.after(n3);
-        n3.after(n4);
-        System.out.println(n1.next().next().getData());
-        System.out.println(n4.next().getData());
+        BinaryTree binaryTree = new BinaryTree();
+        TreeNode root = new TreeNode(1);
+        binaryTree.setRoot(root);
+        TreeNode rootL = new TreeNode(2);
+        TreeNode rootR = new TreeNode(3);
+        root.setLeftNode(rootL);
+        root.setRightNode(rootR);
+        rootL.setLeftNode(new TreeNode(4));
+        rootL.setRightNode(new TreeNode(5));
+        rootR.setLeftNode(new TreeNode(6));
+        rootR.setRightNode(new TreeNode(7));
+//        binaryTree.frontShow();
+//        binaryTree.midShow();
+        binaryTree.afterShow();
     }
 }
