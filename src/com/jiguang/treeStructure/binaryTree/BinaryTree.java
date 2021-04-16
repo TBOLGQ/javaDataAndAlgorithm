@@ -17,4 +17,15 @@ public class BinaryTree {
     public void afterShow(){
         root.afterShow();
     }
+
+    public TreeNode frontSelect(int i){
+        return root.frontSelect(i);
+    }
+    public void delete(int i){
+        if (root.value == i ){
+            root = null;
+        }else {
+            root.delete(i);
+        }
+    }
 }

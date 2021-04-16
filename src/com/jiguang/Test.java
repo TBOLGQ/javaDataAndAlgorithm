@@ -18,6 +18,7 @@ public class Test {
         rootR.setRightNode(new TreeNode(7));
 //        binaryTree.frontShow();
 //        binaryTree.midShow();
-        binaryTree.afterShow();
+        binaryTree.delete(2);
+        binaryTree.frontShow();
     }
 }
