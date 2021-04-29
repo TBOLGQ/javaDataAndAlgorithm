@@ -6,7 +6,6 @@ public class ThreadedNode {
     ThreadedNode rightNode;
     int leftType;
     int rightType;
-
     public ThreadedNode(int value) {
         this.value = value;
     }
@@ -25,5 +24,14 @@ public class ThreadedNode {
 
     public void setRightType(int rightType) {
         this.rightType = rightType;
+    }
+    public void midShow(){
+        if (leftNode!=null){
+            leftNode.midShow();
+        }
+        System.out.println(value);
+        if (rightNode!=null){
+            rightNode.midShow();
+        }
     }
 }
