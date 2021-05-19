@@ -12,6 +12,9 @@ public class ArrayStackDemo {
     }
 }
 
+/**
+ * 数组模拟栈
+ */
 class ArrayStack{
     private int maxSize;
     private int[] stack;
