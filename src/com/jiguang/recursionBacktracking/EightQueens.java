@@ -16,6 +16,10 @@ public class EightQueens {
         System.out.printf("八皇后共有%d种解法~", count);
     }
 
+    /**
+     *
+     * @param n
+     */
     private void check(int n) {
         if (n == max) {
             print();
