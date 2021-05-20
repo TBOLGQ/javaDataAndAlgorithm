@@ -7,13 +7,20 @@ public class BinaryTreeDemo {
         HeroNode node2 = new HeroNode(2,"吴用");
         HeroNode node3 = new HeroNode(3,"卢俊义");
         HeroNode node4 = new HeroNode(4,"林冲");
+        HeroNode node5 = new HeroNode(5,"关胜");
+
         tree.setRoot(root);
         root.setLeft(node2);
         root.setRight(node3);
+        node3.setLeft(node5);
         node3.setRight(node4);
         tree.preOrder();
         System.out.println("============================");
         tree.infixOrder();
+        System.out.println("============================");
+        System.out.println("先序遍历查找节点:");
+        HeroNode heroNode = tree.preOrderSearch(5);
+        System.out.println(heroNode);
     }
 }
 
@@ -27,18 +34,28 @@ class BinaryTree {
         this.root = root;
     }
 
+    //先序遍历
     public void preOrder() {
         if (root != null) {
             root.preOrder();
         }
     }
 
+    //中序遍历
     public void infixOrder() {
         if (root != null) {
             root.infixOrder();
         }
     }
 
+    //先序遍历查找指定编号节点
+    public HeroNode preOrderSearch(int no) {
+        if (root != null) {
+            return root.preOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
 }
 
 /**
@@ -112,5 +129,49 @@ class HeroNode {
         if (right != null) {
             right.infixOrder();
         }
+    }
+
+    /**
+     * 先序遍历查找指定编号节点
+     * @param no
+     * @return
+     */
+    public HeroNode preOrderSearch(int no) {
+        if (this.no == no) {
+            return this;
+        }
+        HeroNode resNode = null;
+        if (left != null) {
+            resNode = left.preOrderSearch(no);
+        }
+        if (resNode != null) {
+            return resNode;
+        }
+        if (right != null) {
+            resNode = right.preOrderSearch(no);
+        }
+        return resNode;
+    }
+
+    /**
+     * 中序遍历查找指定编号节点
+     * @param no
+     * @return
+     */
+    public HeroNode infixOrderSearch(int no) {
+        HeroNode resNode = null;
+        if (left != null) {
+            resNode = left.infixOrderSearch(no);
+        }
+        if (resNode != null) {
+            return resNode;
+        }
+        if (this.no == no) {
+            return this;
+        }
+        if (right != null) {
+            resNode = right.infixOrderSearch(no);
+        }
+        return resNode;
     }
 }
